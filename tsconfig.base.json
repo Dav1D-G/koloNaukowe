@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@notification-domain/common": ["libs/common/src/index.ts"],
+      "@notification-domain/constants": ["libs/constants/src/index.ts"],
+      "@notification-domain/dto": ["libs/dto/src/index.ts"],
+      "@notification-domain/entities": ["libs/entities/src/index.ts"],
+      "@notification-domain/notification-state-db": [
+        "libs/notification-state-db/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
