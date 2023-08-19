@@ -1,1 +1,1 @@
-export const REGISTER = 'notifications.accounts.registration'
+export const REGISTER = 'notifications.accounts.registration';

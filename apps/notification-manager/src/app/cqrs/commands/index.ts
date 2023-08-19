@@ -1,1 +1,1 @@
-export * from "./registrationCommand"
+export * from './registrationCommand';

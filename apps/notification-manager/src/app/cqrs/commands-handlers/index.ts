@@ -1,6 +1,3 @@
-import { CreatePostHandler } from "./registrationCommandHandler";
+import { CreatePostHandler } from './registrationCommandHandler';
 
-
-export const ParamCommandHandler = [
-    CreatePostHandler
-]
+export const ParamCommandHandler = [CreatePostHandler];

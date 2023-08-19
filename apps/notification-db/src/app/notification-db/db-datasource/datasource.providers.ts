@@ -11,9 +11,7 @@ export const notificationStateDbProviders = [
         username: 'root',
         password: 'example',
         database: 'notification-state-db',
-        entities: [
-          __dirname + '/../**/*.entity{.ts,.js}',
-        ],
+        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });
 

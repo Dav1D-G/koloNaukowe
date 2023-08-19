@@ -15,7 +15,6 @@ async function bootstrap() {
     snapshot: true,
   });
 
-
   // await app.init();
 
   // const appService = app
@@ -37,14 +36,20 @@ async function bootstrap() {
   //     },
   //   },
   // } as KafkaOptions);
-  const microService = await NestFactory.createMicroservice<KafkaOptions>(AppModule, {transport : Transport.KAFKA, options : {
-    client : {
-      brokers : ['localhost:29092'],
-  },
-  consumer : {
-      groupId : 'temp-consumer',
-  }
-   } });
+  const microService = await NestFactory.createMicroservice<KafkaOptions>(
+    AppModule,
+    {
+      transport: Transport.KAFKA,
+      options: {
+        client: {
+          brokers: ['localhost:29092'],
+        },
+        consumer: {
+          groupId: 'temp-consumer',
+        },
+      },
+    }
+  );
 
   microService.listen();
   await app.startAllMicroservices();

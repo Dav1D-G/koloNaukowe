@@ -1,9 +1,8 @@
-import { Module } from "@nestjs/common"
+import { Module } from '@nestjs/common';
 
 import { NotificationManagerModule } from './notification-manager/notification-manager.module';
 
 @Module({
-  imports: [NotificationManagerModule]
+  imports: [NotificationManagerModule],
 })
-
 export class AppModule {}

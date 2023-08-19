@@ -8,7 +8,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post()
-  getData(@Body() data : {name:string,phone?:string,email?:string}) {
+  getData(@Body() data: { name: string; phone?: string; email?: string }) {
     console.log(data);
     return this.appService.getData(data);
   }
