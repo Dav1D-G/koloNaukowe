@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { REGISTER } from '@notification-domain/constants';
 import { CommandBus } from '@nestjs/cqrs';
@@ -8,6 +8,7 @@ import { CommandBus } from '@nestjs/cqrs';
 import { RegistrationCommand } from '../cqrs/commands/registrationCommand';
 //import { Dto } from 'libs/notification-state-db/src/lib/dto/dto';
 import { Dto } from '@notification-domain/notification-state-db';
+import { GetUser } from '../cqrs/commands/get-user/get-user';
 
 @Controller()
 export class NotificationManagerController {
@@ -25,5 +26,14 @@ export class NotificationManagerController {
       )
     );
     return post;
+  }
+
+  @Get()
+  async getUsers()
+  {
+    const post = await this.commandBus.execute(new GetUser());
+
+    return post;
+
   }
 }

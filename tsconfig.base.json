@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@notification-domain/bucket-storage": [
+        "libs/bucket-storage/src/index.ts"
+      ],
       "@notification-domain/common": ["libs/common/src/index.ts"],
       "@notification-domain/constants": ["libs/constants/src/index.ts"],
       "@notification-domain/dto": ["libs/dto/src/index.ts"],

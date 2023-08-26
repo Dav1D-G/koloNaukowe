@@ -19,4 +19,14 @@ export class AppService {
       email?: string;
     }>('notifications.accounts.registration', data);
   }
+
+
+  getUsers()
+  {
+    this.kafkaService.subscribeToResponseOf(
+      'notifications.accounts.getusers'
+    );
+
+    return this.kafkaService.send('notifications.accounts.getusers',{});
+  }
 }

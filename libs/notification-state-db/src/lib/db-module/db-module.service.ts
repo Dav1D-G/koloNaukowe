@@ -22,4 +22,12 @@ export class DbModuleService {
     console.log(`Udało się stworzyć następujące dane : ${registrationDto}`);
     return this.repository.save(status);
   }
+
+  async getUser(){
+    const user = await this.repository.find();
+
+    console.log(user);
+
+
+  }
 }

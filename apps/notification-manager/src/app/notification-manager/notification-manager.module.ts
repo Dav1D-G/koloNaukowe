@@ -30,7 +30,7 @@ import { DbModuleService, Entities, NotificationStateDbModule } from '@notificat
     NotificationStateDbModule,
     TypeOrmModule.forFeature([Entities]),
   ],
-  providers: [CommandBus, ...ParamCommandHandler, DbModuleService],
+  providers: [...ParamCommandHandler, DbModuleService],
   controllers: [NotificationManagerController],
 })
 export class NotificationManagerModule {}
