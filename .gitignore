@@ -37,7 +37,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 
 minio_storage
 
 
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e

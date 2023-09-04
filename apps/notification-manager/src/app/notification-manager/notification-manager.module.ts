@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Inject, Module, OnModuleInit } from '@nestjs/common';
 import { NotificationManagerController } from './notification-manager.controller';
 import { CqrsModule } from '@nestjs/cqrs';
@@ -20,6 +21,18 @@ import { SchemaState  } from '@notification-domain/entities';
 
 
 
+=======
+import { Module } from '@nestjs/common';
+import { NotificationManagerController } from './notification-manager.controller';
+import { CommandBus, CqrsModule } from '@nestjs/cqrs';
+import { ParamCommandHandler } from '../cqrs/commands-handlers';
+//import {NotificationDbService} from '../../../../notification-db/src/app/notification-db/notification-db.service'
+//import { NotificationEntity } from 'apps/notification-db/src/app/entities/notification-entity/notification-entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ClientsModule, Transport } from '@nestjs/microservices';
+
+import { DbModuleService, Entities, NotificationStateDbModule } from '@notification-domain/notification-state-db';
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 
 @Module({
   imports: [
@@ -34,6 +47,7 @@ import { SchemaState  } from '@notification-domain/entities';
             brokers: ['localhost:29092'],
           },
           consumer: {
+<<<<<<< HEAD
             groupId: 'service-consumer',
           },
         },
@@ -60,3 +74,17 @@ export class NotificationManagerModule implements OnModuleInit {
      console.log(`Przekazano kafce następujący topic : sms.accounts.registration`);
   }
 }
+=======
+            groupId: 'temp-consumer',
+          },
+        },
+      },
+    ]),
+    NotificationStateDbModule,
+    TypeOrmModule.forFeature([Entities]),
+  ],
+  providers: [...ParamCommandHandler, DbModuleService],
+  controllers: [NotificationManagerController],
+})
+export class NotificationManagerModule {}
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e

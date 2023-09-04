@@ -8,6 +8,7 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 
+<<<<<<< HEAD
 import {KafkaOptions, Transport} from '@nestjs/microservices'
 
 async function bootstrap() {
@@ -27,6 +28,10 @@ async function bootstrap() {
 
     
   await microService.listen();
+=======
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3000;

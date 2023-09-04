@@ -17,10 +17,13 @@ export class AppController {
   getUsers(){
     return this.appService.getUsers();
   }
+<<<<<<< HEAD
 
   @Post('templatka')
   putData(@Body() data : {file?:string,metadata : {templateId:string}}){
     console.log(data);
     return this.appService.putData(data);
   }
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 }

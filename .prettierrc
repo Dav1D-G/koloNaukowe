@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "semi": true,
   "tabWidth": 2,
   "printWidth": 99,
@@ -6,4 +7,7 @@
   "arrowParens": "always",
   "trailingComma": "none",
   "jsxBracketSameLine": true
+=======
+  "singleQuote": true
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 }

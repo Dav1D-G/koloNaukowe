@@ -13,8 +13,11 @@ export class AppService {
     this.kafkaService.subscribeToResponseOf(
       'notifications.accounts.registration'
     );
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
     return this.kafkaService.send<{
       name: string;
       phone?: string;
@@ -31,6 +34,7 @@ export class AppService {
 
     return this.kafkaService.send('notifications.accounts.getusers',{});
   }
+<<<<<<< HEAD
 
   putData(data : {file?:string,metadata : {templateId:string}})
   {
@@ -40,4 +44,6 @@ export class AppService {
 
     return this.kafkaService.send('notifications.api.v1',data);
   }
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 }

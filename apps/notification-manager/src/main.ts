@@ -8,7 +8,10 @@ import { NestFactory } from '@nestjs/core';
 import { KafkaOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app/app.module';
 import { Logger } from '@nestjs/common';
+<<<<<<< HEAD
 import { NotificationManagerController } from './app/notification-manager/notification-manager.controller';
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 // import { NotificationManagerController } from './app/notification-manager/notification-manager.controller';
 // import { NotificationManagerModule } from './app/notification-manager/notification-manager.module';
 
@@ -17,6 +20,7 @@ async function bootstrap() {
     snapshot: true,
   });
 
+<<<<<<< HEAD
  //const x =  app.get(NotificationManagerController);
 
  
@@ -41,6 +45,8 @@ async function bootstrap() {
   //     },
   //   },
   // } as KafkaOptions);
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
   const microService = await NestFactory.createMicroservice<KafkaOptions>(
     AppModule,
     {
@@ -55,10 +61,19 @@ async function bootstrap() {
       },
     }
   );
+<<<<<<< HEAD
+=======
+  const port = process.env.PORT || 7000;
+  await app.listen(port);
+  Logger.log(
+    `🚀 Application is running on: http://localhost:${port}`
+  );
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 
   microService.listen();
   await app.startAllMicroservices();
   await app.init();
+<<<<<<< HEAD
 
   // x.accountRegistration({name : "Ziomek",
   // phone : "345678890",
@@ -72,6 +87,8 @@ async function bootstrap() {
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}}`
   );
+=======
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
 }
 
 bootstrap();

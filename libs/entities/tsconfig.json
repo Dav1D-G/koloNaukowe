@@ -7,8 +7,12 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+<<<<<<< HEAD
     "noFallthroughCasesInSwitch": true,
     "strictPropertyInitialization": false
+=======
+    "noFallthroughCasesInSwitch": true
+>>>>>>> 25c34785fc9ff510562e9bfa7225db98d199c57e
   },
   "files": [],
   "include": [],
