@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  keycloak:
+    image: bitnami/keycloak:latest
+    environment:
+      - KEYCLOAK_ADMIN_USER=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+
+      - KEYCLOAK_DATABASE_VENDOR=postgresql
+      - KEYCLOAK_DATABASE_HOST=postgres
+      - KEYCLOAK_DATABASE_NAME=keycloak
+      - KEYCLOAK_DATABASE_USER=keycloak
+      - KEYCLOAK_DATABASE_PASSWORD=keycloak
+      - KEYCLOAK_DATABASE_SCHEMA=public
+      - KEYCLOAK_DATABASE_PORT=5432
+
+      - KEYCLOAK_LOGLEVEL=DEBUG
+      - KEYCLOAK_MAIL_ENABLED=true
+      - KEYCLOAK_MAIL_HOST=mailhog
+      - KEYCLOAK_MAIL_PORT=1025
+      - KEYCLOAK_MAIL_USERNAME=test
+      - KEYCLOAK_MAIL_PASSWORD=test
+      - KEYCLOAK_MAIL_FROM=keycloak@example.com
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  mailhog:
+    image: jcalonso/mailhog:latest
+    ports:
+      - "8025:8025"  # Web UI
+      - "1025:1025"  # SMTP server
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+volumes:
+  keycloak-data:
+    driver: local
+  postgres-data:
+    driver: local
